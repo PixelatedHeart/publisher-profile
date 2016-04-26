@@ -22,6 +22,10 @@ This plugin creates a publisher profile that can publish every post, but cannot 
 
 == Changelog ==
 
+= 1.0.9 =
+
+* Solved a bug that did not limit the blocking of the visual editor only for publishers
+
 = 1.0.8 =
 
 * Remove HTML editor for publishers

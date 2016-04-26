@@ -35,15 +35,23 @@ function add_theme_caps() {
 add_action( 'admin_init', 'add_theme_caps');
 
 
+function publisher_launch(){
+    $user = wp_get_current_user();
+    if ( in_array( 'publisher', (array) $user->roles ) ) {
+      add_filter( 'tiny_mce_before_init', 'my_format_TinyMCE' );
+    }
+}
+add_filter( 'admin_init', 'publisher_launch' );
+
+
 // We make tinyMCE read-only for the publishers
 function my_format_TinyMCE( $in ) {
-$user = wp_get_current_user();
-  if ( in_array( 'publisher', (array) $user->roles ) ) {
-    $in['readonly'] = 1;
-    return $in;
-  }
+  $user = wp_get_current_user();
+    if ( in_array( 'publisher', (array) $user->roles ) ) {
+      $in['readonly'] = 1;
+      return $in;
+    }
 }
-add_filter( 'tiny_mce_before_init', 'my_format_TinyMCE' );
 
 // We make tinyMCE the default editor for everyone
 add_filter( 'wp_default_editor', create_function('', 'return "tinymce";') );
