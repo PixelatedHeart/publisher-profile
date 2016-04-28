@@ -67,7 +67,7 @@ add_filter( 'wp_default_editor', create_function('', 'return "tinymce";') );
 function publisher_profile_disable_html() {
   $user = wp_get_current_user();
   if ( in_array( 'publisher_profile', (array) $user->roles ) ) {
-   echo '<style type="text/css">#content-html, #quicktags {display: none;}</style>' . "\n";
+   echo '<style type="text/css">#content-html, #quicktags, .page-title-action, #wp-admin-bar-new-content {display: none;}</style>' . "\n";
   }
 }
 add_action( 'admin_head', 'publisher_profile_disable_html' );
