@@ -3,7 +3,7 @@
  * Plugin Name: Publisher Profile
  * Plugin URI: https://wordpress.org/plugins/publisher-profile
  * Description: Adds a publisher profile that can only publish, without editing permissions.
- * Version: 1.0.10
+ * Version: 1.0.11
  * Author: bi0xid
  * Author URI: http://bi0xid.es
  * License: GPL3
