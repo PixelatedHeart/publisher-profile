@@ -71,3 +71,14 @@ function publisher_profile_disable_html() {
   }
 }
 add_action( 'admin_head', 'publisher_profile_disable_html' );
+
+// We disable the blocks for publishers - publishers cannot see blocks that they are not going to use
+function publisher_profile_disable_blocks() {
+  $user = wp_get_current_user();
+  if ( in_array( 'publisher_profile', (array) $user->roles ) ) {
+    wp_enqueue_script( 'publisher_profile_js', plugin_dir_url( __FILE__ ) . '/js/publisher_profile.js', array(), '1.0.0', true );
+  }
+}
+add_action( 'admin_enqueue_scripts', 'publisher_profile_disable_blocks' );
+
+
