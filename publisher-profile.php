@@ -16,7 +16,9 @@ function publisher_profile_add_publisher_role() {
     'level_0' => true,
   ) );
 }
-add_action('admin_init', 'add_publisher_role');
+add_action('admin_init', 'publisher_profile_add_publisher_role');
+
+
 
 // We add the capabilities - edit and publish
 function publisher_profile_add_caps() {
