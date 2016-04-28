@@ -4,7 +4,7 @@ Donate link: https://paypal.me/bi0xid
 Tags: publisher, profile, role
 Requires at least: 4.4
 Tested up to: 4.5.1
-Stable tag: 1.0.9
+Stable tag: 1.0.10
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -21,6 +21,12 @@ This plugin creates a publisher profile that can publish every post, but cannot 
 1. Activate the plugin through the 'Plugins' menu in WordPress.
 
 == Changelog ==
+
+= 1.0.10 =
+
+* Changed name of the profile to avoid conflict with WP 4.5.1
+* Names of functions sanitized
+* Eliminated deprecated role functions
 
 = 1.0.9 =
 
