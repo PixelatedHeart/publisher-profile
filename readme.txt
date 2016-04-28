@@ -22,6 +22,10 @@ This plugin creates a publisher profile that can publish every post, but cannot 
 
 == Changelog ==
 
+= 1.0.13 =
+
+* Solved bug getting rid of the sidebars "Add new" elements
+
 = 1.0.12 =
 
 * Get rid of "Add new" elements for publishers
