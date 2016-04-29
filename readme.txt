@@ -1,5 +1,5 @@
 === Publisher Profile ===
-Contributors: bi0xid pixelatedheart
+Contributors: bi0xid, pixelatedheart
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=BDUEBSM9QRPDU
 Tags: publisher, profile, role
 Requires at least: 4.4
