@@ -91,19 +91,3 @@ function publisher_profile_disable_controls($hook) {
 }
 add_action( 'admin_enqueue_scripts', 'publisher_profile_disable_controls' );
 
-
-
-// Update message for the version
-$file   = basename( __FILE__ );
-$folder = basename( dirname( __FILE__ ) );
-$hook = "in_plugin_update_message-{$folder}/{$file}";
-add_action( $hook, 'publisher_profile_update_message', 10, 2 ); // 10:priority, 2:arguments #
-
-function publisher_profile_update_message( $plugin_data, $r )
-{
-    echo '
-* Adding slug control
-* Solving bugs
-';
-}
-
