@@ -3,7 +3,7 @@
  * Plugin Name: Publisher Profile
  * Plugin URI: https://wordpress.org/plugins/publisher-profile
  * Description: Adds a publisher profile that can only publish, without editing permissions.
- * Version: 1.0.14
+ * Version: 1.0.15
  * Author: bi0xid
  * Author URI: http://bi0xid.es
  * License: GPL3
@@ -81,4 +81,29 @@ function publisher_profile_disable_blocks() {
 }
 add_action( 'admin_enqueue_scripts', 'publisher_profile_disable_blocks' );
 
+
+function publisher_profile_disable_controls($hook) {
+    if ( 'post.php' != $hook ) {
+        return;
+    }
+
+    wp_enqueue_script( 'publisher_profile_control_js', plugin_dir_url( __FILE__ ) . '/js/publisher_profile_control.js', array(), '1.0.0', true );
+}
+add_action( 'admin_enqueue_scripts', 'publisher_profile_disable_controls' );
+
+
+
+// Update message for the version
+$file   = basename( __FILE__ );
+$folder = basename( dirname( __FILE__ ) );
+$hook = "in_plugin_update_message-{$folder}/{$file}";
+add_action( $hook, 'publisher_profile_update_message', 10, 2 ); // 10:priority, 2:arguments #
+
+function publisher_profile_update_message( $plugin_data, $r )
+{
+    echo '
+* Adding slug control
+* Solving bugs
+';
+}
 
