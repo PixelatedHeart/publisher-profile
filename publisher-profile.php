@@ -86,8 +86,10 @@ function publisher_profile_disable_controls($hook) {
     if ( 'post.php' != $hook ) {
         return;
     }
-
-    wp_enqueue_script( 'publisher_profile_control_js', plugin_dir_url( __FILE__ ) . '/js/publisher_profile_control.js', array(), '1.0.0', true );
+    $user = wp_get_current_user();
+    if ( in_array( 'publisher_profile', (array) $user->roles ) ) {
+      wp_enqueue_script( 'publisher_profile_control_js', plugin_dir_url( __FILE__ ) . '/js/publisher_profile_control.js', array(), '1.0.0', true );
+    }
 }
 add_action( 'admin_enqueue_scripts', 'publisher_profile_disable_controls' );
 
